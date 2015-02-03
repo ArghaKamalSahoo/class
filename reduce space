@@ -1,0 +1,21 @@
+include<stdio.h>
+#include<conio.h>
+int main()
+{
+char source[20],target[20];
+int i,j;
+gets(source);
+i=0;
+j=0;
+while(source[i]!='\0')
+{
+ if(!(source[i] == ' ' && source[i+1] == ' ')) {
+        target[j]=source[i];
+        j++;
+      }
+i++;
+}
+target[j]='\0';
+puts(target);
+return 0;
+}
