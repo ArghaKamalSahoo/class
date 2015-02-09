@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<conio.h>
+#include<malloc.h>
+int a[10];
+void quick_sort(int a[],int,int);
+int partition(int a[],int,int);
+void main()
+{
+    int n,i;
+    printf("enter the size of the array:\n");
+    scanf("%d",&n);
+    printf("enter the element:\n");
+    for(i=0;i<=n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    quick_sort(a,0,n-1);
+    printf("\n after sorting:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",a[i]);
+        getch();
+    }
+}
+void quick_sort(int a[],int beg,int end)
+{
+    int x;
+    if(beg<end)
+    {
+        x=partition(a,beg,end);
+        quick_sort(a,beg,x-1);
+        quick_sort(a,x+1,end);
+    }
+}
+int partition(int a[],int beg,int end)
+{
+    int loc=beg,temp;
+    while(1)
+    {
+        while(a[loc]<a[end]&&loc!=end)
+            end--;
+        if(loc==end)
+            return loc;
+            else
+            {
+        temp=a[loc];
+        a[loc]=a[end];
+        a[end]=temp;
+        loc=end;
+            }
+        while(a[loc]>=a[beg]&&loc!=beg)
+            beg++;
+        if(loc==beg)
+            return loc;
+        else
+        {
+            temp=a[loc];
+            a[loc]=a[beg];
+            a[beg]=temp;
+            loc=beg;
+        }
+    }
+}
+
