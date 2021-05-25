@@ -19,3 +19,50 @@ target[j]='\0';
 puts(target);
 return 0;
 }
+Hi Abhishek,
+
+As discussed Please find the below problem summary of KBR 6 (Security type – Event Input.)
+
+Problem:
+
+As per existing functionality all corporate action Event are not enable for all type of Security. Warrant security Type is not enable for all event WC type. User would like the ability to input corporate action event for WC type while Event should run as per existing functionality
+
+
+Analysis:
+
+(a) In the existing functionality there has total 17 corporate action  events and all the corporate action events are not enable for all type of security. Warrant(WTS) security type is enable only for two corporate action event that is OP and WS, user like the ability to input all the other 15 corporate action events for WTS security type. All the Corporate action events to be enabled for WTS security type along with existing corporate action events are given below.
+
+===============================
+Events Required to import in WTS
+===============================
+
+SS
+SO
+BO
+CD
+RT
+SD
+SM
+SP
+OT
+DV
+BI
+RD
+RN
+SM
+OT
+===============================
+Events presents  in WTS
+===============================
+
+OP
+WS
+
+
+Solution:
+
+(a) Need to  map 15 corporate action events to warrant(WTS) security type in DB.
+
+
+Regards,
+Argha Sahoo
